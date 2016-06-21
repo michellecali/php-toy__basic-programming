@@ -7,9 +7,38 @@
 // Run `bin/check` from the command line to execute the automated tests.
 
 function filterNumbers($arr) {
-  // Your code goes here.
-}
+ 	$filtered = array();
+ 	foreach ($arr as $num){
+ 		if ($num < 10){
+ 			array_push($filtered, $num);
+ 		}
+ 	}
+ 	return $filtered;
+ }
+
 
 // Write your own "tests" below. Refer to the the examples from exercise #1.
+ echo "\nTesting that [30, 5, 9, 10, 11] will return [5, 9].\n";
+$arr = array(30, 5, 9, 10, 11);
+if (filterNumbers($arr) == [5, 9]) {
+  echo "Success!";
+}
+else{
+  echo "Failed!";
+}
+echo "\n-------------------------------------------------------------------\n";
+
+ echo "\nTesting that [30, 10, 11] will return [].\n";
+$arr = array(30, 10, 11);
+if (filterNumbers($arr) == []) {
+  echo "Success!";
+}
+else{
+  echo "Failed!";
+}
+echo "\n-------------------------------------------------------------------\n";
+
+echo "\n###################################################################\n";
+echo "Tests complete.\n";
 
 ?>
